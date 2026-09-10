@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]          # Se déclenche à chaque push sur main
-  workflow_dispatch:           # Permet de lancer manuellement depuis GitHub
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: 🔨 Build
-        run: npm run build
+        run: npx --yes vite build
 
       - name: 📤 Upload artifact
         uses: actions/upload-pages-artifact@v3
